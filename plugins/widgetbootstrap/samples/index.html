@@ -47,56 +47,67 @@
         Give your content authors the ability to add responsive layout elements to their pages.
       </p>
 
-      <h2>Demo</h2>
+      <h2>Using</h2>
+      <p>Install the plugin using the standard <a href="http://docs.ckeditor.com/#!/guide/dev_plugins" target="_blank">CKEditor plugin installation instructions</a>.  
+      We recommend manually building your editor on ckeditor.com, or using <a href="https://github.com/albatrossdigital/ckeditor-sandbox" target="_blank">our base editor build</a>, which will include everything you need:</p>
+      <pre>&lt;script src="http://albatrossdigital.github.io/ckeditor-sandbox/ckeditor.js"&gt;&lt;/script&gt;</pre>
+      <p>Once you have added the plugin, you can use the standard Toolbar Groups, specify a custom toolbar, or use our Widget Template Menu plugin.
 
 
+      <a name="toolbarGroups"></a><h3>Toolbar Groups</h3>
+      <pre>
+        CKEDITOR.replace( 'editor1', {
+          plugins: 'wysiwygarea,toolbar,basicstyles,menubutton,link,sourcearea',
+          extraPlugins: 'image2,widget,widgetbootstrap,',
+          height: 400,
+          contentsCss: [
+            '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
+          ],
+          toolbarGroups : [
+              // On the basic preset, clipboard and undo is handled by keyboard.
+              // Uncomment the following line to enable them on the toolbar as well.
+              { name: 'clipboard',   groups: [ 'clipboard', 'undo', 'source' ] },
+              { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+              { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+              { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align' ] },
+              { name: 'links' },
+              { name: 'insert' },
+              { name: 'about' }
+          ]
+        } );
+      </pre>
 
       <textarea id="editor1" cols="10" rows="10">
-        <h1>Simple Box Sample</h1>
-
-        <div class="simplebox align-right" style="width: 50%">
-          <h2 class="simplebox-title">Title</h2>
-          <div class="simplebox-content">
-            <p>Foo <strong>bar</strong>.</p>
-            <ul>
-              <li>Foo!</li>
-              <li>Bar!</li>
-            </ul>
-          </div>
+        <div class="row two-col-left">
+        <div class="col-md-3 col-sidebar">
+        <p><img alt="" src="http://placehold.it/300x250&amp;text=Image" /></p>
         </div>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet orci ut nisi adipiscing ultrices. Sed pellentesque iaculis malesuada. Pellentesque scelerisque, purus non porta dictum, neque urna bibendum dolor, eget tristique ipsum metus fringilla dolor. Nullam sed accumsan sapien. Vestibulum in placerat magna. Sed justo lacus, volutpat rhoncus odio luctus, ornare adipiscing mauris. Vivamus erat sem, egestas et lectus eget, varius cursus odio. Duis posuere lacus sit amet urna bibendum, id iaculis eros ultrices. Vestibulum a ultrices ante.</p>
-
-        <p>Pellentesque vitae eleifend nisl, non accumsan tellus. Maecenas nec libero non tellus tincidunt mollis porttitor sed arcu. Donec ultricies nulla vitae eros lacinia, vel congue sem auctor. Vivamus convallis, urna ac tincidunt malesuada, lectus erat convallis metus, a hendrerit massa augue accumsan magna. Nulla mattis tellus elit, nec congue magna scelerisque eget. Aliquam posuere nisi augue, posuere sodales nisi iaculis eu. Donec fermentum urna id nibh sagittis fermentum sit amet sed enim. Aliquam neque elit, pretium elementum nunc a, faucibus accumsan lorem. Etiam pulvinar odio et hendrerit tincidunt. Suspendisse tempus eros lacus, in convallis velit mollis ut. Aenean congue, justo eleifend ultricies malesuada, nunc nunc molestie mauris, eget placerat libero eros vel nisi. Quisque diam arcu, mollis ac laoreet vitae, varius et sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis in vehicula sapien. Nunc feugiat porta elit nec volutpat.</p>
-
-        <div class="simplebox align-center" style="width: 750px">
-          <h2 class="simplebox-title">Title</h2>
-          <div class="simplebox-content">
-            <p>Foo <strong>bar</strong>.</p>
-            <ul>
-              <li>Foo!</li>
-              <li>Bar!</li>
-            </ul>
-          </div>
+        <div class="col-md-9 col-main">
+        <p>Content</p>
+        </div>
         </div>
 
-        <p>Ut eget ipsum a sapien porta ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus mi lacus, pharetra eu bibendum blandit, tristique sit amet leo. Integer eu nulla nec magna vulputate blandit. Praesent mattis quis ante eget adipiscing. Nulla vel tempus risus, in placerat velit. Mauris sed nibh at elit posuere laoreet. Morbi non sapien sed nunc fringilla imperdiet.</p>
+        <p>&nbsp;</p>
       </textarea>
 
       <script>
 
         CKEDITOR.replace( 'editor1', {
           plugins: 'wysiwygarea,toolbar,basicstyles,menubutton,link,sourcearea',
-          loadPlugins: {
-            "widgetbootstrap": {"path": '../widgetbootstrap'}
-          },
-          extraPlugins: 'image2,widget,widgetbootstrap,', //,autogrow
+          extraPlugins: 'image2,widget,widgetbootstrap,',
           height: 400,
           toolbarGroups : [
+              // On the basic preset, clipboard and undo is handled by keyboard.
+              // Uncomment the following line to enable them on the toolbar as well.
+              { name: 'clipboard',   groups: [ 'clipboard', 'undo', 'source' ] },
+              { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+              { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+              { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align' ] },
+              { name: 'links' },
+              { name: 'insert' },
+              { name: 'about' }
           ]
-            
-       
-
         } );
 
       </script>
@@ -104,11 +115,11 @@
       <h2>About the Creators</h2>
       <div class="row two-col-left">
         <div class="col-md-2 col-sidebar">
-          <p><a href="http://albatrossdigital.com"><img alt="Albatross Digital" src="http://albatrossdigital.com/images/logo.png" /></a></p>
+          <p><a href="http://albatrossdigital.com" title="Albatross Digital" target="_blank"><img alt="Albatross Digital" src="http://albatrossdigital.com/images/logo.png" /></a></p>
         </div>
 
         <div class="col-md-10 col-main">
-          <p><a href="http://albatrossdigital.com">Albatross Digital</a> is a small group that builds websites, designs identities and solve problems.
+          <p><a href="http://albatrossdigital.com" target="_blank">Albatross Digital</a> is a small group that builds websites, designs identities and solve problems.
           We have spent a lot of time and resources thinking about better content authoring experiences and workflows.  If you're interested in learning 
           more, <a href="http://albatrossdigital.com/projects">have a look at our work</a> or send us a note at <a href="mailto:hello@albatrossdigital.com">hello@albatrossdigital.com</a>.
         </div>
