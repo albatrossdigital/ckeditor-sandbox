@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Le styles -->
+    <link data-require="bootstrap-css" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link data-require="bootstrap@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <style>
+      body {
+        padding-top: 60px;
+      }
+      @media (max-width: 979px) {
+
+        /* Remove any padding from the body */
+        body {
+          padding-top: 0;
+        }
+      }
+    </style>
+    <link href="style.css" rel="stylesheet" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+    <!-- Le javascript
+    ================================================== -->
+    <script data-require="jquery" data-semver="2.1.3" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script data-require="bootstrap" data-semver="3.3.1" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://albatrossdigital.github.io/ckeditor-sandbox/ckeditor.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>CKEditor Bootstrap Widgets</h1>
+      <p>
+        Give your content authors the ability to add responsive layout elements to their pages.
+      </p>
+
+      <h2>Demo</h2>
+
+
+
+      <textarea id="editor1" cols="10" rows="10">
+        <h1>Simple Box Sample</h1>
+
+        <div class="simplebox align-right" style="width: 50%">
+          <h2 class="simplebox-title">Title</h2>
+          <div class="simplebox-content">
+            <p>Foo <strong>bar</strong>.</p>
+            <ul>
+              <li>Foo!</li>
+              <li>Bar!</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet orci ut nisi adipiscing ultrices. Sed pellentesque iaculis malesuada. Pellentesque scelerisque, purus non porta dictum, neque urna bibendum dolor, eget tristique ipsum metus fringilla dolor. Nullam sed accumsan sapien. Vestibulum in placerat magna. Sed justo lacus, volutpat rhoncus odio luctus, ornare adipiscing mauris. Vivamus erat sem, egestas et lectus eget, varius cursus odio. Duis posuere lacus sit amet urna bibendum, id iaculis eros ultrices. Vestibulum a ultrices ante.</p>
+
+        <p>Pellentesque vitae eleifend nisl, non accumsan tellus. Maecenas nec libero non tellus tincidunt mollis porttitor sed arcu. Donec ultricies nulla vitae eros lacinia, vel congue sem auctor. Vivamus convallis, urna ac tincidunt malesuada, lectus erat convallis metus, a hendrerit massa augue accumsan magna. Nulla mattis tellus elit, nec congue magna scelerisque eget. Aliquam posuere nisi augue, posuere sodales nisi iaculis eu. Donec fermentum urna id nibh sagittis fermentum sit amet sed enim. Aliquam neque elit, pretium elementum nunc a, faucibus accumsan lorem. Etiam pulvinar odio et hendrerit tincidunt. Suspendisse tempus eros lacus, in convallis velit mollis ut. Aenean congue, justo eleifend ultricies malesuada, nunc nunc molestie mauris, eget placerat libero eros vel nisi. Quisque diam arcu, mollis ac laoreet vitae, varius et sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis in vehicula sapien. Nunc feugiat porta elit nec volutpat.</p>
+
+        <div class="simplebox align-center" style="width: 750px">
+          <h2 class="simplebox-title">Title</h2>
+          <div class="simplebox-content">
+            <p>Foo <strong>bar</strong>.</p>
+            <ul>
+              <li>Foo!</li>
+              <li>Bar!</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>Ut eget ipsum a sapien porta ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus mi lacus, pharetra eu bibendum blandit, tristique sit amet leo. Integer eu nulla nec magna vulputate blandit. Praesent mattis quis ante eget adipiscing. Nulla vel tempus risus, in placerat velit. Mauris sed nibh at elit posuere laoreet. Morbi non sapien sed nunc fringilla imperdiet.</p>
+      </textarea>
+
+      <script>
+
+        CKEDITOR.replace( 'editor1', {
+          plugins: 'wysiwygarea,toolbar,basicstyles,menubutton,link,sourcearea',
+          loadPlugins: {
+            "widgetbootstrap": {"path": '../widgetbootstrap'}
+          },
+          extraPlugins: 'image2,widget,widgetbootstrap,', //,autogrow
+          height: 400,
+          toolbarGroups : [
+          ]
+            
+       
+
+        } );
+
+      </script>
+
+      <h2>About the Creators</h2>
+      <div class="row two-col-left">
+        <div class="col-md-2 col-sidebar">
+          <p><a href="http://albatrossdigital.com"><img alt="Albatross Digital" src="http://albatrossdigital.com/images/logo.png" /></a></p>
+        </div>
+
+        <div class="col-md-10 col-main">
+          <p><a href="http://albatrossdigital.com">Albatross Digital</a> is a small group that builds websites, designs identities and solve problems.
+          We have spent a lot of time and resources thinking about better content authoring experiences and workflows.  If you're interested in learning 
+          more, <a href="http://albatrossdigital.com/projects">have a look at our work</a> or send us a note at <a href="mailto:hello@albatrossdigital.com">hello@albatrossdigital.com</a>.
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>
