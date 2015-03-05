@@ -11,7 +11,7 @@ CKEDITOR.config.widgetbootstrapAlert_alertTypes = {
 CKEDITOR.plugins.add( 'widgetbootstrap', {
     requires: 'widget',
 
-    icons: 'widgetbootstrapLeftCol,widgetbootstrapRightCol,widgetbootstrapTwoCol,widgetbootstrapThreeCol,widgetbootstrapThreeCol,widgetbootstrapAlert',
+    icons: 'widgetbootstrapLeftCol,widgetbootstrapRightCol,widgetbootstrapTwoCol,widgetbootstrapThreeCol,widgetbootstrapAlert',
 
     /*defaults : {
         name: 'accordion',
@@ -23,17 +23,15 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
     init: function( editor ) {
         
         // Configurable settings
+        //var allowedWidget = editor.config.widgetbootstrap_allowedWidget != undefined ? editor.config.widgetbootstrap_allowedFull :
+        //    'p h2 h3 h4 h5 h6 span br ul ol li strong em img[!src,alt,width,height]';
         var allowedFull = editor.config.widgetbootstrap_allowedFull != undefined ? editor.config.widgetbootstrap_allowedFull :
-            'div(!row,two-col-left,two-col-right,accordion,two-col,three-col){width};' +
-            'div(!col-md-6,col-md-3,col-md-9,col-sidebar,col-main,col-1,col-2,col-3)'
-            'div(!alert-box,success,alert,warning,info,secondary,alert-text)';
-        var allowedWidget = editor.config.widgetbootstrap_allowedWidget != undefined ? editor.config.widgetbootstrap_allowedFull :
-            'p span br ul ol li strong em img[!src,alt,width,height]';
-        var allowedText = editor.config.widgetbootstrap_allowedText != undefined ? editor.config.widgetbootstrap_allowedFull :
-            'p span br ul ol li strong em';
+            'p a div span h2 h3 h4 h5 h6 section article iframe object embed strong b i em cite pre blockquote small sub sup code ul ol li dl dt dd table thead tbody th tr td img caption mediawrapper br[href,src,target,width,height,colspan,span,alt,name,title,class,id,data-options]{text-align,float,margin}(*);'
+        //var allowedText = editor.config.widgetbootstrap_allowedText != undefined ? editor.config.widgetbootstrap_allowedFull :
+        //    'p span br ul ol li strong em';
 
 
-        //allowedWidget = 'img[!src,alt,width,height]';
+        allowedWidget = allowedFull;
         //allowedText = allowedWidget;
 
         var showButtons = editor.config.widgetbootstrapShowButtons != undefined ? editor.config.widgetbootstrapShowButtons : true;
@@ -56,7 +54,7 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
                 },
                 col2: {
                     selector: '.col-main',
-                    allowedContent: allowedText
+                    allowedContent: allowedWidget
                 }
             },
 
@@ -85,7 +83,7 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
                 },
                 col2: {
                     selector: '.col-main',
-                    allowedContent: allowedText
+                    allowedContent: allowedWidget
                 }
             },
 
@@ -103,8 +101,8 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             template:
                 '<div class="row two-col">' +
-                    '<div class="col-md-6 col-1"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Content</p></div>' +
-                    '<div class="col-md-6 col-2"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Content</p></div>' +
+                    '<div class="col-md-6 col-1"><p><img src="http://placehold.it/500x280&text=Image" /></p><p>Content</p></div>' +
+                    '<div class="col-md-6 col-2"><p><img src="http://placehold.it/500x280&text=Image" /></p><p>Content</p></div>' +
                 '</div>',
 
             editables: {
@@ -132,9 +130,9 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             template:
                 '<div class="row three-col">' +
-                    '<div class="col-md-4 col-1"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Text below</p></div>' +
-                    '<div class="col-md-4 col-2"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Text below</p></div>' +
-                    '<div class="col-md-4 col-3"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Text below</p></div>' +
+                    '<div class="col-md-4 col-1"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
+                    '<div class="col-md-4 col-2"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
+                    '<div class="col-md-4 col-3"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
                 '</div>',
 
             editables: {
